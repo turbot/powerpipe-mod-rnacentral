@@ -117,62 +117,62 @@ dashboard "rna_analysis_dashboard" {
 
 query "feedback_distribution_by_assembly" {
   sql = <<-EOQ
-    SELECT
+    select
       assembly_id AS "Assembly ID",
-      COUNT(*) AS "Feedback Count"
-    FROM
+      count(*) AS "Feedback Count"
+    from
       rnacen.rnc_feedback_target_assemblies
-    GROUP BY
+    group by
       assembly_id;
   EOQ
 }
 
 query "unique_interactions_per_interacting_id" {
   sql = <<-EOQ
-    SELECT
+    select
       interacting_id AS "Interacting ID",
-      COUNT(DISTINCT intact_id) AS "Unique Interactions"
-    FROM
+      count(DISTINCT intact_id) AS "Unique Interactions"
+    from
       rnacen.rnc_interactions
-    GROUP BY
+    group by
       interacting_id
-    ORDER BY
+    order by
       "Unique Interactions" DESC
-    LIMIT 10;
+    limit 10;
   EOQ
 }
 
 query "interactions_by_taxid_distribution" {
   sql = <<-EOQ
-    SELECT
+    select
       taxid AS "Taxonomic ID",
-      COUNT(*) AS "Number of Interactions"
-    FROM
+      count(*) AS "Number of Interactions"
+    from
       rnacen.rnc_interactions
-    GROUP BY
+    group by
       taxid
-    ORDER BY
+    order by
       "Number of Interactions" DESC
-    LIMIT 10;
+    limit 10;
   EOQ
 }
 
 query "databases_by_num_sequences" {
   sql = <<-EOQ
-    SELECT
+    select
       display_name AS "Database",
       num_sequences AS "Number of Sequences"
-    FROM
+    from
       rnacen.rnc_database;
   EOQ
 }
 
 query "databases_by_num_organisms" {
   sql = <<-EOQ
-    SELECT
+    select
       display_name AS "Database",
       num_organisms AS "Number of Organisms"
-    FROM
+    from
       rnacen.rnc_database;
   EOQ
 }
@@ -180,42 +180,42 @@ query "databases_by_num_organisms" {
 # Sample queries based on the available tables
 query "total_chemical_components" {
   sql = <<-EOQ
-    SELECT COUNT(*) AS "Total Chemical Components"
-    FROM rnacen.rnc_chemical_components;
+    select count(*) AS "Total Chemical Components"
+    from rnacen.rnc_chemical_components;
   EOQ
 }
 
 query "total_databases" {
   sql = <<-EOQ
-    SELECT COUNT(*) AS "Total Databases"
-    FROM rnacen.rnc_database;
+    select count(*) AS "Total Databases"
+    from rnacen.rnc_database;
   EOQ
 }
 
 query "total_interactions" {
   sql = <<-EOQ
-    SELECT COUNT(*) AS "Total Interactions"
-    FROM rnacen.rnc_interactions;
+    select count(*) AS "Total Interactions"
+    from rnacen.rnc_interactions;
   EOQ
 }
 
 query "database_size_comparison" {
   sql = <<-EOQ
-    SELECT
+    select
       display_name AS "Database",
       num_sequences,
       num_organisms
-    FROM
+    from
       rnacen.rnc_database;
   EOQ
 }
 
 query "coding_probability_vs_fickett_score" {
   sql = <<-EOQ
-    SELECT
+    select
       coding_probability,
       fickett_score
-    FROM
+    from
       rnacen.rnc_cpat_results
     WHERE
       coding_probability IS NOT NULL AND
@@ -225,54 +225,54 @@ query "coding_probability_vs_fickett_score" {
 
 query "modifications_distribution" {
   sql = <<-EOQ
-    SELECT
+    select
       modification_id,
-      COUNT(*) AS "num_modifications"
-    FROM
+      count(*) AS "num_modifications"
+    from
       rnacen.rnc_modifications
-    GROUP BY
+    group by
       modification_id
-    ORDER BY
+    order by
       "num_modifications" DESC
-    LIMIT 10;
+    limit 10;
   EOQ
 }
 
 query "chemical_components_distribution" {
   sql = <<-EOQ
-    SELECT
+    select
       source,
-      COUNT(*) AS "Count"
-    FROM
+      count(*) AS "Count"
+    from
       rnacen.rnc_chemical_components
-    GROUP BY
+    group by
       source
-    ORDER BY
+    order by
       "Count" DESC;
   EOQ
 }
 
 query "interactions_by_taxid" {
   sql = <<-EOQ
-    SELECT
+    select
       taxid,
-      COUNT(*) AS "Number of Interactions"
-    FROM
+      count(*) AS "Number of Interactions"
+    from
       rnacen.rnc_interactions
-    GROUP BY
+    group by
       taxid;
   EOQ
 }
 
 query "feedback_overlap_analysis" {
   sql = <<-EOQ
-    SELECT
+    select
       assembly_id,
-      COUNT(*) FILTER (WHERE should_ignore = false) AS "Relevant Feedbacks",
-      COUNT(*) FILTER (WHERE should_ignore = true) AS "Ignored Feedbacks"
-    FROM
+      count(*) FILTER (WHERE should_ignore = false) AS "Relevant Feedbacks",
+      count(*) FILTER (WHERE should_ignore = true) AS "Ignored Feedbacks"
+    from
       rnacen.rnc_feedback_overlap
-    GROUP BY
+    group by
       assembly_id;
   EOQ
 }
