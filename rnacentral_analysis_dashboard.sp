@@ -180,22 +180,28 @@ query "databases_by_num_organisms" {
 # Sample queries based on the available tables
 query "total_chemical_components" {
   sql = <<-EOQ
-    select count(*) AS "Total Chemical Components"
-    from rnacen.rnc_chemical_components;
+    select
+      count(*) AS "Total Chemical Components"
+    from
+      rnacen.rnc_chemical_components;
   EOQ
 }
 
 query "total_databases" {
   sql = <<-EOQ
-    select count(*) AS "Total Databases"
-    from rnacen.rnc_database;
+    select
+      count(*) AS "Total Databases"
+    from
+      rnacen.rnc_database;
   EOQ
 }
 
 query "total_interactions" {
   sql = <<-EOQ
-    select count(*) AS "Total Interactions"
-    from rnacen.rnc_interactions;
+    select
+      count(*) AS "Total Interactions"
+    from
+      rnacen.rnc_interactions;
   EOQ
 }
 
