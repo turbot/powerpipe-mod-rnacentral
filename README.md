@@ -6,7 +6,7 @@ RNAcentral is a collection representing all ncRNA types from a broad range of or
 
 ## Installation
 
-Download and install Powerpipe (https://powerpipe.io/downloads). Or use Brew:
+Log in to Kaggle, download and install Powerpipe (https://powerpipe.io/downloads). Or use Brew:
 
 ```sh
 brew install turbot/tap/powerpipe
