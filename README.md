@@ -1,6 +1,6 @@
-# RNAcentral Analysis Mod for PowerPipe
+# RNAcentral Mod for Powerpipe
 
-RNAcentral is a collection representing all ncRNA types from a broad range of organisms data using PostgreSql and PowerPipe.
+RNAcentral is a collection representing all ncRNA types from a broad range of organisms data using PostgreSQL and Powerpipe.
 
 ![rnacentral-analysis-dashboard-dashboard-image](https://github.com/turbot/powerpipe-mod-rnacentral/assets/72413708/f865afd6-49d1-48f8-86e3-00f983ead126)
 
@@ -12,20 +12,16 @@ Download and install Powerpipe (https://powerpipe.io/downloads). Or use Brew:
 brew install turbot/tap/powerpipe
 ```
 
-## Clone the Mod Repository
+Clone:
 
 ```sh
 git clone https://github.com/turbot/powerpipe-mod-rnacentral.git
 cd powerpipe-mod-rnacentral
 ```
 
-## Get the Dataset
-
-RNAcentral provides a public Postgres database that can be used to query the data using SQL syntax. We will use the `rnacentral` database to query the data.
-
 ## Usage
 
-Run the dashboard and specify the DB connection string:
+Run the dashboard and connect to the [public RNAcentral Postgres database](https://rnacentral.org/help/public-database) connection string:
 
 ```sh
 powerpipe server --database postgres://reader:NWDMCE5xdipIjRrp@hh-pgsql-public.ebi.ac.uk:5432/pfmegrnargs
