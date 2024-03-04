@@ -1,7 +1,7 @@
 This dashboard answers the following questions:
 
-- How many movies are present in the database?
-- What is the average worldwide earnings from the movies?
-- What is the average domestic earnings from the movies?
-- What are the top rated movies by IMDb?
-- What is the most popular movie genre across various age groups?
+- How many chemical components are present in the RNAcentral database?
+- What is the total count of databases contributing their data to RNAcentral?
+- Which databases have the highest number of sequences?
+- How are RNA modifications distributed across different types?
+- What are the trends in RNA interactions as classified by taxonomic IDs?
