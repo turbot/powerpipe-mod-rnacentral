@@ -1,23 +1,24 @@
-dashboard "rna_analysis_dashboard" {
-  title = "RNAcentral Analysis Dashboard"
+dashboard "rnacentral" {
+  title = "RNAcentral Dashboard"
+  documentation = file("./docs/rnacentral.md")
 
   container {
     title = "Overview"
 
     card {
-      query = query.total_chemical_components
+      query = query.rnacentral_total_chemical_components
       width = 4
       type  = "info"
     }
 
     card {
-      query = query.total_databases
+      query = query.rnacentral_total_databases
       width = 4
       type  = "info"
     }
 
     card {
-      query = query.total_interactions
+      query = query.rnacentral_total_interactions
       width = 4
       type  = "info"
     }
@@ -29,14 +30,14 @@ dashboard "rna_analysis_dashboard" {
     chart {
       type  = "pie"
       title = "Databases by Number of Organisms"
-      query = query.databases_by_num_organisms
+      query = query.rnacentral_databases_by_num_organisms
       width = 6
     }
 
     chart {
       type  = "donut"
       title = "Databases by Number of Sequences"
-      query = query.databases_by_num_sequences
+      query = query.rnacentral_databases_by_num_sequences
       width = 6
     }
   }
@@ -46,7 +47,7 @@ dashboard "rna_analysis_dashboard" {
     width = 6
 
     chart {
-      query = query.chemical_components_distribution
+      query = query.rnacentral_chemical_components_distribution
       title = "Chemical Components Distribution by Source"
       type  = "donut"
     }
@@ -57,7 +58,7 @@ dashboard "rna_analysis_dashboard" {
     width = 6
 
     chart {
-      query = query.modifications_distribution
+      query = query.rnacentral_modifications_distribution
       title = "RNA Modifications Distribution"
       type  = "column"
 
@@ -72,7 +73,7 @@ dashboard "rna_analysis_dashboard" {
     title = "Interaction and Feedback Analysis"
 
     chart {
-      query = query.interactions_by_taxid
+      query = query.rnacentral_interactions_by_taxid
       width = 6
       title = "Interactions by Taxonomic ID"
       type  = "column"
@@ -81,7 +82,7 @@ dashboard "rna_analysis_dashboard" {
     chart {
       type  = "column"
       title = "Top 10 Entities by Unique Interactions"
-      query = query.unique_interactions_per_interacting_id
+      query = query.rnacentral_unique_interactions_per_interacting_id
       width = 6
 
       series "Unique Interactions" {
@@ -91,7 +92,7 @@ dashboard "rna_analysis_dashboard" {
     }
 
     chart {
-      query = query.feedback_overlap_analysis
+      query = query.rnacentral_feedback_overlap_analysis
       width = 6
       title = "Feedback Overlap Analysis"
       type  = "column"
@@ -100,7 +101,7 @@ dashboard "rna_analysis_dashboard" {
     chart {
       type  = "column"
       title = "Assemblies by Feedback Count"
-      query = query.feedback_distribution_by_assembly
+      query = query.rnacentral_feedback_distribution_by_assembly
       width = 6
 
       series "Feedback Count" {
@@ -113,7 +114,7 @@ dashboard "rna_analysis_dashboard" {
 
 # Card Queries
 
-query "total_chemical_components" {
+query "rnacentral_total_chemical_components" {
   sql = <<-EOQ
     select
       count(*) as "Total Chemical Components"
@@ -122,7 +123,7 @@ query "total_chemical_components" {
   EOQ
 }
 
-query "total_databases" {
+query "rnacentral_total_databases" {
   sql = <<-EOQ
     select
       count(*) as "Total Databases"
@@ -131,7 +132,7 @@ query "total_databases" {
   EOQ
 }
 
-query "total_interactions" {
+query "rnacentral_total_interactions" {
   sql = <<-EOQ
     select
       count(*) as "Total Interactions"
@@ -142,7 +143,7 @@ query "total_interactions" {
 
 # Chart Queries
 
-query "databases_by_num_organisms" {
+query "rnacentral_databases_by_num_organisms" {
   sql = <<-EOQ
     select
       display_name as "Database",
@@ -154,7 +155,7 @@ query "databases_by_num_organisms" {
   EOQ
 }
 
-query "databases_by_num_sequences" {
+query "rnacentral_databases_by_num_sequences" {
   sql = <<-EOQ
     select
       display_name as "Database",
@@ -166,7 +167,7 @@ query "databases_by_num_sequences" {
   EOQ
 }
 
-query "chemical_components_distribution" {
+query "rnacentral_chemical_components_distribution" {
   sql = <<-EOQ
     select
       source,
@@ -180,7 +181,7 @@ query "chemical_components_distribution" {
   EOQ
 }
 
-query "modifications_distribution" {
+query "rnacentral_modifications_distribution" {
   sql = <<-EOQ
     select
       modification_id,
@@ -195,7 +196,7 @@ query "modifications_distribution" {
   EOQ
 }
 
-query "interactions_by_taxid" {
+query "rnacentral_interactions_by_taxid" {
   sql = <<-EOQ
     select
       taxid,
@@ -209,7 +210,7 @@ query "interactions_by_taxid" {
   EOQ
 }
 
-query "unique_interactions_per_interacting_id" {
+query "rnacentral_unique_interactions_per_interacting_id" {
   sql = <<-EOQ
     select
       interacting_id as "Interacting ID",
@@ -224,7 +225,7 @@ query "unique_interactions_per_interacting_id" {
   EOQ
 }
 
-query "feedback_overlap_analysis" {
+query "rnacentral_feedback_overlap_analysis" {
   sql = <<-EOQ
     select
       assembly_id,
@@ -237,7 +238,7 @@ query "feedback_overlap_analysis" {
   EOQ
 }
 
-query "feedback_distribution_by_assembly" {
+query "rnacentral_feedback_distribution_by_assembly" {
   sql = <<-EOQ
     select
       assembly_id as "Assembly ID",
