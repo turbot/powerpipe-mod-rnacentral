@@ -26,12 +26,13 @@ Download and install Powerpipe (https://powerpipe.io/downloads). Or use Brew:
 brew install turbot/tap/powerpipe
 ```
 
-Clone:
+Install the mod:
 
 ```sh
-git clone https://github.com/turbot/powerpipe-mod-rnacentral.git
-cd powerpipe-mod-rnacentral
-```
+mkdir dashboards
+cd dashboards
+powerpipe mod init
+powerpipe mod install github.com/turbot/powerpipe-mod-rnacentral
 
 ## Usage
 
