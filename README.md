@@ -1,6 +1,6 @@
 # RNAcentral Mod for Powerpipe
 
-RNAcentral is a collection representing all ncRNA types from a broad range of organisms data using PostgreSQL and Powerpipe.
+RNAcentral is a collection representing all ncRNA types from a broad range of organisms data using [PostgreSQL](https://www.postgresql.org/) and [Powerpipe](https://powerpipe.io).
 
 ![image](https://github.com/turbot/powerpipe-mod-rnacentral/blob/rnacentral/docs/rnacentral_dashboard_screenshot.png)
 
