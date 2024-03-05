@@ -35,13 +35,15 @@ powerpipe mod init
 powerpipe mod install github.com/turbot/powerpipe-mod-rnacentral
 ```
 
-## Usage
+### Browsing Dashboards
 
-Run the dashboard and connect to the [public RNAcentral Postgres database](https://rnacentral.org/help/public-database) connection string:
+Start the dashboard server with the [public RNAcentral Postgres database](https://rnacentral.org/help/public-database) connection string:
 
 ```sh
 powerpipe server --database postgres://reader:NWDMCE5xdipIjRrp@hh-pgsql-public.ebi.ac.uk:5432/pfmegrnargs
 ```
+
+Browse and view your dashboards at **https://localhost:9033**.
 
 ## Open Source & Contributing
 
