@@ -3,4 +3,4 @@
 _What's new?_
 
 - New dashboard:
-  - RNAcentral Dashboard. ([#1](https://github.com/turbot/powerpipe-mod-rnacentral/pull/1))
+  - [RNAcentral Dashboard](https://hub.powerpipe.io/mods/turbot/powerpipe-mod-rnacentral/dashboard.rnacentral)
