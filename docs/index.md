@@ -8,7 +8,9 @@ View dashboards to analyze [RNAcentral](https://rnacentral.org/) chemical compon
 
 - **[Dashboards →](https://hub.powerpipe.io/mods/turbot/rnacentral/dashboards)**
 
-## Installation
+## Getting Started
+
+### Installation
 
 Download and install Powerpipe (https://powerpipe.io/downloads). Or use Brew:
 
