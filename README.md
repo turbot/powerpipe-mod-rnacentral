@@ -18,7 +18,9 @@ Dashboards can help answer questions like:
 
 - **[Dashboards →](https://hub.powerpipe.io/mods/turbot/rnacentral/dashboards)**
 
-## Installation
+## Getting Started
+
+### Installation
 
 Download and install Powerpipe (https://powerpipe.io/downloads). Or use Brew:
 
