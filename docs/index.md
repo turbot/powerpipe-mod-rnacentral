@@ -1,18 +1,8 @@
-# RNAcentral Mod for Powerpipe
+# RNAcentral Mod
 
 View dashboards to analyze [RNAcentral](https://rnacentral.org/) chemical components, database insights, and sequence behaviors, and more.
 
-![image](https://raw.githubusercontent.com/turbot/powerpipe-mod-rnacentral/main/docs/rnacentral_dashboard_screenshot.png)
-
-## Overview
-
-Dashboards can help answer questions like:
-
-- How many chemical components are present in the RNAcentral database?
-- What is the total count of databases contributing their data to RNAcentral?
-- Which databases have the highest number of sequences?
-- How are RNA modifications distributed across different types?
-- What are the trends in RNA interactions as classified by taxonomic IDs?
+<img src="https://raw.githubusercontent.com/turbot/powerpipe-mod-rnacentral/main/docs/rnacentral_dashboard_screenshot.png" width="50%" type="thumbnail"/>
 
 ## Documentation
 
