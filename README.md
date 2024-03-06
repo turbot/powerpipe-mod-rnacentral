@@ -43,7 +43,7 @@ Start the dashboard server with the [public RNAcentral Postgres database](https:
 powerpipe server --database postgres://reader:NWDMCE5xdipIjRrp@hh-pgsql-public.ebi.ac.uk:5432/pfmegrnargs
 ```
 
-Browse and view your dashboards at **https://localhost:9033**.
+Browse and view your dashboards at **http://localhost:9033**.
 
 ## Open Source & Contributing
 
